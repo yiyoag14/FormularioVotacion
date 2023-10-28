@@ -1,0 +1,41 @@
+h3 {
+    margin: 20px;
+}
+
+#votingForm {
+    border: 2px solid #555;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#votingForm > div, h3 {
+    margin: 20px;
+}
+
+#votingForm label {
+    display: inline-block;
+    width: 200px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    vertical-align: top;
+}
+
+#votingForm div {
+    margin-bottom: 20px;
+}
+
+#votingForm input[type="text"], 
+#votingForm input[type="email"],
+#votingForm select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#votingForm input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+
+

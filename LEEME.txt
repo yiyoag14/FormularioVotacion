@@ -1,0 +1,44 @@
+-------------------------
+INSTALACIÓN DEL PROYECTO
+-------------------------
+
+A continuación se detallan los pasos para poder instalar y ejecutar el proyecto localmente.
+
+Requisitos previos:
+-------------------
+1. PHP versión: 7.4.33
+2. Base de Datos: MySQL 8.0.33
+3. Visual Studio Code (VSCode) - para editar y visualizar el código.
+4. WampServer - para ejecutar el servidor local.
+5. MySQL Workbench - para gestionar y visualizar la base de datos.
+
+Pasos de instalación:
+---------------------
+
+1. **Descarga y Configuración de WampServer:**
+   - Si aún no tienes WampServer instalado, descárgalo e instálalo desde el sitio oficial.
+   - Asegúrate de que el servicio de WampServer esté ejecutándose. Deberías poder ver el icono en la bandeja del sistema.
+
+2. **Configuración de la Base de Datos:**
+   - Abre MySQL Workbench y conecta con tu servidor local.
+   - Crea una nueva base de datos con el nombre "sistema_votacion"
+   - Importa el archivo SQL proporcionado para crear las tablas y estructuras necesarias. (Asegúrate de indicar en el proyecto el archivo SQL o cómo obtenerlo)
+   - Orden de creación de tablas:
+   1. regiones.sql
+   2. comunas.sql
+   3. candidato.sql
+   4. votos.sql
+
+3. **Configuración del Proyecto:**
+   - Clona o descarga el repositorio del proyecto en la carpeta "www" de WampServer.
+   - Abre el proyecto con VSCode.
+   - Edita el archivo `db_connection.php` (o el archivo correspondiente de configuración de la base de datos) y ajusta los valores para que coincidan con tu configuración local (nombre de la base de datos, usuario, contraseña, etc.).
+
+4. **Ejecución del Proyecto:**
+   - Abre un navegador y ve a `http://localhost/FormularioVotacion/` para acceder al proyecto.
+   - ¡Listo! Ahora deberías poder ver y interactuar con el proyecto en tu servidor local.
+
+Notas Adicionales:
+------------------
+- Asegúrate de tener los puertos necesarios (por lo general el 80 para HTTP y el 3306 para MySQL) disponibles y sin conflictos.
+- Si experimentas problemas con la sesión de PHP o permisos, verifica la configuración de PHP en WampServer y los permisos de los archivos y carpetas.
