@@ -1,0 +1,60 @@
+Sistema de Votación
+
+Se desarrolló un sistema de votación que permite a los usuarios registrarse y emitir su voto.
+
+Estructura de archivos:
+
+index.php: Es la interfaz principal del sistema de votación, en donde el usuario puede rellenar y enviar sus datos, así como su voto.
+LEEME.txt: Incluye las instrucciones para instalar y configurar el proyecto.
+/sql: Esta carpeta contiene todos los archivos SQL necesarios para crear y poblar la base de datos.
+db_connection.php: Archivo que establece la conexión con la base de datos MySQL.
+funciones.php: Este archivo contiene las funciones auxiliares para obtener datos específicos de la base de datos, como las regiones y las comunas. También posee funciones de validación.
+php/save_vote.php: Archivo encargado de recibir los datos del formulario, realizar las validaciones necesarias y guardar la información en la base de datos.
+
+Base de datos:
+
+Tabla regiones:
+
+id (INT(2)): Identificador único de la región.
+nombre (VARCHAR(255)): Nombre de la región.
+Nota: Se ingresaron las 16 regiones de Chile con identificadores manuales.
+
+Tabla comunas:
+
+id (INT(3)): Identificador único de la comuna.
+region_id (INT(2)): Identificador de la región a la que pertenece la comuna.
+nombre (VARCHAR(255)): Nombre de la comuna.
+Nota: Se ingresaron las comunas de Chile para cada región con identificadores manuales.
+
+Tabla candidatos:
+
+id (INT): Identificador único del candidato.
+nombre (VARCHAR(255)): Nombre del candidato.
+partido_politico (VARCHAR(255)): Nombre del partido político al que pertenece el candidato.
+Nota: Se han ingresado 5 candidatos con partidos políticos imaginarios, con identificadores manuales.
+
+Tabla votos:
+
+id (INT): Identificador único del voto.
+rut (VARCHAR(12)): RUT del votante, único para evitar votos duplicados.
+nombre (VARCHAR(255)): Nombre completo del votante.
+alias (VARCHAR(50)): Alias del votante.
+email (VARCHAR(255)): Email del votante.
+region_id (INT): Identificador de la región seleccionada.
+comuna_id (INT): Identificador de la comuna seleccionada.
+candidato_id (INT): Identificador del candidato seleccionado.
+como_se_entero (VARCHAR(255)): Manera en la que el votante conoció el sistema.
+Nota: Se establecieron relaciones de llave foránea con las tablas regiones, comunas y candidatos.
+
+Nota adicional: Dentro de la carpeta /sql, se incluye el archivo que permite la creación del esquema de la base de datos (CREATE Schema).
+
+Funcionalidades:
+
+El sistema valida que el campo "Nombre y Apellido" no esté vacío.
+Se asegura de que el "Alias" contenga más de 5 caracteres, y que incluya tanto letras como números.
+Se realiza una validación del formato del RUT chileno.
+El formato del email es validado para cumplir con el estándar común.
+Los campos "Región", "Comuna", y "Candidato" se cargan dinámicamente desde la base de datos y se valida que no se dejen en blanco.
+Es mandatorio que el usuario seleccione al menos dos opciones en el campo "¿Cómo se enteró de nosotros?".
+Para garantizar la unicidad de los votantes, el sistema valida que no se realicen votos duplicados utilizando el RUT como criterio.
+
