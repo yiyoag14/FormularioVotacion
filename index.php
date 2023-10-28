@@ -16,7 +16,7 @@ $candidatos = getCandidatos($conexion);
 </head>
 <body>
     <div class="container">
-        <h3>FORMULARIO DE VOTACION</h3>
+        <h3>FORMULARIO DE VOTACIÓN</h3>
         <form id="votingForm" method="post" action="php/save_vote.php">
             <div>
                 <label for="nombre">Nombre y Apellido:</label>
